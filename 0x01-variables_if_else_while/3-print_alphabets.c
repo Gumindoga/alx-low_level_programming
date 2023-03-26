@@ -1,5 +1,3 @@
-Here is an example of how you can write a program that prints the alphabet in lowercase and then in uppercase using only the putchar function and while loops:
-
 #include <stdio.h>
 
 /**
