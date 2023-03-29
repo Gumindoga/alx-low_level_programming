@@ -37,12 +37,12 @@ void print_to_98(int n)
 				_putchar(',');
 				_putchar(' ');
 			}
-			if (n < 0)
+			if (i < 0)
 			{
 				_putchar('-');
-				if (n <= -10)
-					_putchar(-(n / 10) + '0');
-				_putchar(-(n % 10) + '0');
+				if (i <= -10)
+					_putchar(-(i / 10) + '0');
+				_putchar(-(i % 10) + '0');
 			}
 			if (i >= 10)
 			{
