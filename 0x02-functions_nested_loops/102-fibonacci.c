@@ -16,15 +16,15 @@ int main(void)
 	a = 1;
 	b = 2;
 
-	printf("%d, ", a);
+	printf("%ld, ", a);
 
 	for (count = 1; count <= 49; count++)
 	{
 		if (count == 49)
-			printf("%d", count)
+			printf("%ld", count)
 		else
 		{
-			printf("%d, ", b);
+			printf("%ld, ", b);
 			temp = a;
 			a = b;
 			b = temp + b;
