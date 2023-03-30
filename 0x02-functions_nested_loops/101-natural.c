@@ -17,5 +17,5 @@ void sum_of_multiples(void)
 		if (i % 5 == 0)
 			sum = sum + i;
 	}
-	printf('%d \n', sum);
+	printf("%d \n", sum);
 }
