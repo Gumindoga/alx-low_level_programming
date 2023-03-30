@@ -19,9 +19,7 @@ int main(void)
 	while (b <= 4000000)
 	{
 		if (b % 2 == 0)
-		{
-			sum = sum + b;
-		}
+			sum = b + sum;
 		temp = a;
 		a = b;
 		b = temp + b;
