@@ -8,10 +8,10 @@
 
 int main(void)
 {
-	long long int a;
-	long long int b;
+	long int a;
+	long int b;
 	int count;
-	long long int temp;
+	long int temp;
 
 	a = 1;
 	b = 2;

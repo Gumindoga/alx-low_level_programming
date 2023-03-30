@@ -1,1 +1,1 @@
-# Hello world Directory
+Low level programming, C
