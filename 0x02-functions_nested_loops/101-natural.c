@@ -1,7 +1,9 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
  * main - computes sum of multiples
+ * Return: 0
  */
 
 int main(void)
@@ -16,7 +18,6 @@ int main(void)
 		if (i % 5 == 0)
 			sum = sum + i;
 	}
-	_putchar(sum + '0');
-	_putchar('\n');
-	return (0);
+	printf("%d\n")
+	return (sum);
 }
