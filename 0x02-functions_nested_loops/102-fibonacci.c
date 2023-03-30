@@ -21,7 +21,7 @@ int main(void)
 	for (count = 1; count <= 49; count++)
 	{
 		if (count == 49)
-			printf("%ld", count)
+			printf("%ld", b);
 		else
 		{
 			printf("%ld, ", b);
