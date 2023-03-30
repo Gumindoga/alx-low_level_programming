@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * sum_of_multiples - computes sum of multiples
+ * main - computes sum of multiples
  */
 
-void sum_of_multiples(void)
+void main(void)
 {
 	int sum;
 	int i;
