@@ -4,7 +4,7 @@
  * main - computes sum of multiples
  */
 
-void main(void)
+int main(void)
 {
 	int sum;
 	int i;
@@ -18,4 +18,5 @@ void main(void)
 	}
 	_putchar(sum + '0');
 	_putchar('\n');
+	return (0);
 }
