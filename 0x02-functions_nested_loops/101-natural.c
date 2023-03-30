@@ -1,21 +1,21 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * sum_of_multiples - computes sum of multiples
+ * main - computes sum of multiples
+ * Return: 0
  */
 
-void sum_of_multiples(void)
+int main(void)
 {
 	int sum;
 	int i;
 
 	for (i = 0; i < 1024; i++)
 	{
-		if (i % 3 == 0)
-			sum = sum + i;
-		if (i % 5 == 0)
+		if (i % 3 == 0 || i % 5 == 0)
 			sum = sum + i;
 	}
-	_putchar(sum + '0');
-	_putchar('\n');
+	printf("%d\n", sum);
+	return (0);
 }
