@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -17,5 +16,6 @@ void sum_of_multiples(void)
 		if (i % 5 == 0)
 			sum = sum + i;
 	}
-	printf("%d \n", sum);
+	_putchar(sum + '0');
+	_putchar('\n');
 }
