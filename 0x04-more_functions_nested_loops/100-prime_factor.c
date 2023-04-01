@@ -15,18 +15,12 @@ int main(void)
 	{
 		if (n % i == 0)
 		{
-			printf("%ld", i);
-			if (n == i)
+			while (n % i == 0)
 			{
-				putchar('\n');
-			}
-			else
-			{
-				putchar('*');
-				n /= i;
-				i--;
+				n = n / i;
 			}
 		}
 	}
+	printf("%ld\n", i - 1);
 	return (0);
 }
