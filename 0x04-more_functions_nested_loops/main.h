@@ -10,3 +10,4 @@ void print_diagonal(int);
 void print_square(int);
 int main(void);
 void print_triangle(int);
+void print_number(int);
