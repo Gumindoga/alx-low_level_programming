@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
- * main - prints 1 to 100
+ * fizz_buzz - prints 1 to 100
  * fizz for multiples of 3, buzz for multiples of 5
  * Return: void
  */
 
-void main(void)
+void fizz_buzz(void)
 {
 	int i;
 
