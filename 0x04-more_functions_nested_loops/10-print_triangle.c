@@ -20,8 +20,11 @@ void print_triangle(int size)
 		{
 			int j;
 			int h;
+			int n;
 
-			for (h = i; h >= 0; h--)
+			n = size;
+
+			for (h = n - 1; h >= 0; h--)
 			{
 				_putchar(' ');
 			}
@@ -32,6 +35,7 @@ void print_triangle(int size)
 			}
 
 			_putchar('\n');
+			n--;
 		}
 	}
 }
