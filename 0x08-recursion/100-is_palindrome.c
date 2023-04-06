@@ -8,7 +8,7 @@
  * Return: 1 if palindrome, 0 otherwise
  */
 
-int check_palindrome(char *s, int i, int j)
+int palindrome_check(char *s, int i, int j)
 {
 	if (i >= j)
 	{
@@ -18,7 +18,7 @@ int check_palindrome(char *s, int i, int j)
 	{
 		return (0);
 	}
-	return check_palindrome(s, i + 1, j - 1);
+	return (palindrome_check(s, i + 1, j - 1));
 }
 
 /**
@@ -48,5 +48,6 @@ int _strlen_recursion(char *s)
 int is_palindrome(char *s)
 {
 	int l = _strlen_recursion(s);
-	return (check_palindrome(s, 0, l - 1));
+
+	return (palindrome_check(s, 0, l - 1));
 }
