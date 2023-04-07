@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void prev_string(char *s)
+void rev_string(char *s)
 {
 	int l;
 	int i;
