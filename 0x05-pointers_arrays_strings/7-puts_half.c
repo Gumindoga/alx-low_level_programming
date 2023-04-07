@@ -17,10 +17,19 @@ void puts_half(char *str)
 		l++;
 	}
 
-	for (n = l / 2; n <= l - 1; n++)
+	if (l % 2 == 0)
 	{
-		_putchar(str[n]);
+		for (n = (l + 1) / 2; n <= l - 1; n++)
+		{
+			_putchar(str[n]);
+		}
 	}
-
+	else
+	{
+		for (n = l / 2; n <= l - 1; n++)
+		{
+			_putchar(str[n]);
+		}
+	}
 	_putchar('\n');
 }
