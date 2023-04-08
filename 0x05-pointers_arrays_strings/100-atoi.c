@@ -9,11 +9,11 @@
 
 int _atoi(char *s)
 {
-	int res;
+	int r;
 	int sign;
 	int i;
 
-	res = 0;
+	r = 0;
 	sign = 1;
 	i = 0;
 	while (s[i] != '\0' && (s[i] < '0' || s[i] > '9'))
@@ -27,18 +27,18 @@ int _atoi(char *s)
 
 	while (s[i] != '\0' && s[i] >= '0' && s[i] <= '9')
 	{
-		if (res < INT_MIN / 10 || (res == INT_MIN / 10 && s[i] - '0' > -(INT_MIN % 10)))
+		if (r < INT_MIN / 10 || (r == INT_MIN / 10 && s[i] - '0' > -(INT_MIN % 10)))
 		{
-			res = INT_MIN;
-			return (res);
+			r = INT_MIN;
+			return (r);
 		}
-		res = res * 10 - (s[i] - '0');
+		r = r * 10 - (s[i] - '0');
 		i++;
 	}
 
 	if (sign == 1)
 	{
-		res = -res;
+		r = -r;
 	}
-	return (res);
+	return (r);
 }
