@@ -27,6 +27,11 @@ int _atoi(char *s)
 
 	while (s[index] != '\0' && s[index] >= '0' && s[index] <= '9')
 	{
+		if (res_int < INT_MIN / 10 || (res_int == INT_MIN / 10 && s[index] - '0' > -(INT_MIN % 10)))
+		{
+			res_int = INT_MIN;
+			return res_int;
+		}
 		res_int = res_int * 10 + (s[index] - '0');
 		index++;
 	}
