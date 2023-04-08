@@ -16,7 +16,6 @@ int _atoi(char *s)
 	res_int = 0;
 	sign = 1;
 	index = 0;
-
 	while (s[index] != '\0' && (s[index] < '0' || s[index] > '9'))
 	{
 		if (s[index] == '-')
@@ -33,9 +32,13 @@ int _atoi(char *s)
 			res_int = INT_MIN;
 			return res_int;
 		}
-		res_int = res_int * 10 + (s[index] - '0');
+		res_int = res_int * 10 - (s[index] - '0');
 		index++;
 	}
 
-	return (sign * res_int);
+	if (sign == 1)
+	{
+		res_int = -res_int;
+	}
+	return (res_int);
 }
