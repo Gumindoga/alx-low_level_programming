@@ -9,36 +9,36 @@
 
 int _atoi(char *s)
 {
-	int res_int;
+	int res;
 	int sign;
-	int index;
+	int i;
 
-	res_int = 0;
+	res = 0;
 	sign = 1;
-	index = 0;
-	while (s[index] != '\0' && (s[index] < '0' || s[index] > '9'))
+	i = 0;
+	while (s[i] != '\0' && (s[i] < '0' || s[i] > '9'))
 	{
-		if (s[index] == '-')
+		if (s[i] == '-')
 		{
 			sign = sign * -1;
 		}
-		index++;
+		i++;
 	}
 
-	while (s[index] != '\0' && s[index] >= '0' && s[index] <= '9')
+	while (s[i] != '\0' && s[i] >= '0' && s[i] <= '9')
 	{
-		if (res_int < INT_MIN / 10 || (res_int == INT_MIN / 10 && s[index] - '0' > -(INT_MIN % 10)))
+		if (res < INT_MIN / 10 || (res == INT_MIN / 10 && s[i] - '0' > -(INT_MIN % 10)))
 		{
-			res_int = INT_MIN;
-			return res_int;
+			res = INT_MIN;
+			return (res);
 		}
-		res_int = res_int * 10 - (s[index] - '0');
-		index++;
+		res = res * 10 - (s[i] - '0');
+		i++;
 	}
 
 	if (sign == 1)
 	{
-		res_int = -res_int;
+		res = -res;
 	}
-	return (res_int);
+	return (res);
 }
