@@ -19,14 +19,14 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		password[i] = rand() % 94 + 33;
+		password[i] = rand() % 126 + 1;
 		sum += password[i];
 	}
 
 	while (sum != PASSWORD_SUM)
 	{
 		i = rand() % 10;
-		if (sum > PASSWORD_SUM && password[i] > 33)
+		if (sum > PASSWORD_SUM && password[i] > 1)
 		{
 			sum--;
 			password[i]--;
