@@ -3,6 +3,8 @@
 #include <time.h>
 #include "main.h"
 
+#define PASSWORD_SUM 2772
+
 /**
  * main - generates random valid passkeys for crackme
  * Return: 0 always
@@ -10,20 +12,34 @@
 
 int main(void)
 {
-	int i;
-	int password_length;
+	int i, sum = 0;
 	char password[100];
 
 	srand(time(NULL));
 
-	password_length = rand() % 10 + 10;
-
-	for (i = 0; i < password_length; i++)
+	for (i = 0; i < 10; i++)
+	{
 		password[i] = rand() % 94 + 33;
+		sum += password[i];
+	}
 
-	password[password_length] = '\0';
+	while (sum != PASSWORD_SUM)
+	{
+		i = rand() % 10;
+		if (sum > PASSWORD_SUM && password[i] > 33)
+		{
+			sum--;
+			password[i]--;
+		}
+		else if (sum < PASSWORD_SUM && password[i] < 126)
+		{
+			sum++;
+			password[i]++;
+		}
+	}
 
-	printf("%s\n", password);
+	password[10] = '\n';
+	printf("%s", password);
 
 	return (0);
 }
