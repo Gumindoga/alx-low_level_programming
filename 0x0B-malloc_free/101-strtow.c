@@ -13,9 +13,6 @@ int count_words(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] == '\0' && i <= 1)
-		{
-			return (-1);
 		}
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 		{
@@ -37,13 +34,10 @@ char **strtow(char *str)
 	int i, j, k, len, words;
 	char **array;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || *str == '\0' || *str == ' ')
 		return (NULL);
 
 	words = count_words(str);
-
-	if (words == -1)
-		return (NULL);
 
 	array = malloc(sizeof(char *) * (words + 1));
 
