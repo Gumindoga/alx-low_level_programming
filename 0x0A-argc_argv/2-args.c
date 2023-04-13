@@ -8,10 +8,12 @@
  * Return: 0 always
  */
 
-int main(int argc, char **argv)
+int main(int argc , char **argv)
 {
+
 	int i;
 
+	(void)argc;
 	for (i = 0; argv[i] != '\0'; i++)
 	{
 		printf("%s\n", argv[i]);
