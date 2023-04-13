@@ -7,13 +7,13 @@
  *
  * Return: The number of words in the string
  */
-int count_words(char *str, char c)
+int count_words(char *str)
 {
 	int i, count = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] == '\0' && str[i - 1] != c)
+		if (str[i] == ' ' && str[i + 1] == '\0' && i <= 1)
 		{
 			return (-1);
 		}
@@ -37,7 +37,7 @@ char **strtow(char *str)
 	int i, j, k, len, words;
 	char **array;
 
-	if (str == NULL || *str == '\0' || *str == ' ')
+	if (str == NULL || *str == '\0')
 		return (NULL);
 
 	words = count_words(str);
