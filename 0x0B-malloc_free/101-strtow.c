@@ -33,48 +33,36 @@ char **strtow(char *str)
 	int i, j, k, len, words;
 	char **array;
 
-	if (str == NULL || *str == '\0')
-	{
+	if (str == NULL || *str == '\0' || str == " ")
 		return (NULL);
-	}
 
 	words = count_words(str);
 	array = malloc(sizeof(char *) * (words + 1));
 
 	if (array == NULL)
-	{
 		return (NULL);
-	}
 
 	for (i = 0, j = 0; i < words; i++)
 	{
 		while (str[j] == ' ')
-		{
 			j++;
-		}
 
 		len = 0;
 		while (str[j + len] != ' ' && str[j + len] != '\0')
-		{
 			len++;
-		}
 
 		array[i] = malloc(sizeof(char) * (len + 1));
 
 		if (array[i] == NULL)
 		{
 			for (k = 0; k < i; k++)
-			{
 				free(array[k]);
-			}
 			free(array);
 			return (NULL);
 		}
 
 		for (k = 0; k < len; k++)
-		{
 			array[i][k] = str[j + k];
-		}
 		array[i][k] = '\0';
 		j += len;
 	}
