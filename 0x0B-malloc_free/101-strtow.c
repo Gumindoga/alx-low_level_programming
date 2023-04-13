@@ -11,7 +11,7 @@ int count_words(char *str)
 {
 	int i, count = 0;
 
-	if (str == " ")
+	if (*str == ' ')
 	{
 		return (-1);
 	}
