@@ -7,12 +7,16 @@
  *
  * Return: The number of words in the string
  */
-int count_words(char *str)
+int count_words(char *str, char c)
 {
 	int i, count = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
+		if (str[i] == ' ' && str[i + 1] == '\0' && str[i - 1] != c)
+		{
+			return (-1);
+		}
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 		{
 			count++;
@@ -37,6 +41,9 @@ char **strtow(char *str)
 		return (NULL);
 
 	words = count_words(str);
+
+	if (words == -1)
+		return (NULL);
 
 	array = malloc(sizeof(char *) * (words + 1));
 
