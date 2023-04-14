@@ -18,6 +18,9 @@ char *multiply(char *num1, char *num2)
 	char *result = calloc(len + 1, sizeof(char));
 	int i, j, carry, n1, n2, sum;
 
+	if (strcmp(num1, "0") == 0 || strcmp(num2, "0") == 0)
+		return ("0");
+
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
