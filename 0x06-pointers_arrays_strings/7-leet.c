@@ -10,16 +10,17 @@ char *leet(char *s)
 {
 	int i = 0;
 	int j;
-	char letters[] = "aAeEoOtTlL";
-	char numbers[] = "4300711";
+	char sletters[] = "aeotl";
+	char bletters[] = "AEOTL ";
+		 char numbers[] = "43071";
 
 	while (s[i] != '\0')
 	{
-		for (j = 0; letters[j] != '\0'; j++)
+		for (j = 0; sletters[j] != '\0'; j++)
 		{
-			if (s[i] == letters[j])
+			if (s[i] == sletters[j] || s[i] == bletters[j])
 			{
-				s[i] = numbers[j / 2];
+				s[i] = numbers[j];
 			}
 		}
 
