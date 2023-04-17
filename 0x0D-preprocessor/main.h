@@ -2,5 +2,6 @@
 #define MAIN_H
 
 int main(void);
+int _putchar(char c);
 
-endif /* MAIN_H */
+#endif /* MAIN_H */
