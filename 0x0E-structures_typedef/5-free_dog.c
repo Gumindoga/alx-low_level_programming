@@ -1,9 +1,10 @@
 #include "dog.h"
+#include "main.h"
 #include <stdlib.h>
 
 /**
  * free_dog - frees all dogs
- * @d: dog
+ * @d: struct dog to free
  */
 
 void free_dog(dog_t *d)
