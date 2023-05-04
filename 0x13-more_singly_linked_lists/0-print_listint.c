@@ -31,7 +31,7 @@ size_t print_listint(const listint_t *h)
 
 /**
  * print_number - prints an integer using only _putchar
- * @n: integer to print
+ * @k: integer to print
  */
 
 void print_number(int k)
