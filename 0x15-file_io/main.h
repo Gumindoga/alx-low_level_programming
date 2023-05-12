@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <elf.h>
 
 #define ELF_MAGIC 0x7f454c46
 
