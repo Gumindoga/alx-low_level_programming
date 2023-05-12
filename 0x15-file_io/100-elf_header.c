@@ -6,11 +6,13 @@
 #include "main.h"
 
 /**
- * main - entry point
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 on success, 98 on failure
+ * main - displays the information contained in the ELF header at the start
+ * of an ELF file
+ * @argc: number of arguments passed to the program
+ * @argv: array of arguments passed to the program
+ * Return: 0 on success, 98 on error
  */
+
 int main(int argc, char **argv)
 {
 	int fd;
@@ -45,15 +47,15 @@ int main(int argc, char **argv)
 	}
 	printf("ELF Header:\n");
 	printf("  Magic:   ");
-	for (n = 0; n < EI_NIDENT; n++)
-		printf("%02x ", header.e_ident[n]);
+	for (int i = 0; i < EI_NIDENT; i++)
+		printf("%02x ", header.e_ident[i]);
 	printf("\n");
 	printf("  Class:                             ");
 	printf("%s\n", header.e_ident[EI_CLASS] == ELFCLASS64 ? "ELF64" : "ELF32");
 	printf("  Data:                              ");
 	printf("%s\n", header.e_ident[EI_DATA] == ELFDATA2MSB ? "2's complement, big endian" : "2's complement, little endian");
-	printf("  Version:                           ");
-	printf("%d %s\n", header.e_ident[EI_VERSION], header.e_ident[EI_VERSION] == EV_CURRENT ? "(current)" : "");
+	printf("  Version:                           %d", header.e_ident[EI_VERSION]);
+	printf("%s\n", header.e_ident[EI_VERSION] == EV_CURRENT ? " (current)" : "");
 	printf("  OS/ABI:                            ");
 	switch (header.e_ident[EI_OSABI])
 	{
@@ -78,41 +80,48 @@ int main(int argc, char **argv)
 	case ELFOSABI_FREEBSD:
 		printf("UNIX - FreeBSD");
 		break;
+	case ELFOSABI_TRU64:
+		printf("UNIX - TRU64");
+		break;
+	case ELFOSABI_ARM:
+		printf("ARM");
+		break;
+	case ELFOSABI_STANDALONE:
+		printf("Standalone App");
+		break;
 	default:
 		printf("<unknown: %x>", header.e_ident[EI_OSABI]);
 		break;
 	}
 	printf("\n");
-	printf("  ABI Version:                       ");
-	printf("%d\n", header.e_ident[EI_ABIVERSION]);
+	printf("  ABI Version:                       %d\n", header.e_ident[EI_ABIVERSION]);
 	printf("  Type:                              ");
 	switch (header.e_type)
 	{
 	case ET_NONE:
-		printf("No file type");
+		printf("NONE (None)");
 		break;
 	case ET_REL:
-		printf("Relocatable file");
+		printf("REL (Relocatable file)");
 		break;
 	case ET_EXEC:
-		printf("Executable file");
+		printf("EXEC (Executable file)");
 		break;
 	case ET_DYN:
-		printf("Shared object file");
+		printf("DYN (Shared object file)");
 		break;
 	case ET_CORE:
-		printf("Core file");
+		printf("CORE (Core file)");
 		break;
 	default:
-		if (header.e_type >= ET_LOPROC && header.e_type <= ET_HIPROC)
-			printf("<processor specific>");
-		else if (header.e_type >= ET_LOOS && header.e_type <= ET_HIOS)
-			printf("<operating system specific>");
+		if ((header.e_type >= ET_LOPROC) && (header.e_type <= ET_HIPROC))
+			printf("Processor Specific: (%x)", header.e_type);
+		else if ((header.e_type >= ET_LOOS) && (header.e_type <= ET_HIOS))
+			printf("OS Specific: (%x)", header.e_type);
 		else
-			printf("<unknown>");
+			printf("<unknown>: %x", header.e_type);
 		break;
 	}
 	printf("\n");
-	printf("  Entry point address:               ");
-	printf("%#lx\n", header.e_entry);
+	close(fd);
 }
