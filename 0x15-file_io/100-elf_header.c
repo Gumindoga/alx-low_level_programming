@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <elf.h>
+#include "main.h"
 
 /**
  * main - entry point
