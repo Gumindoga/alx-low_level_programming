@@ -10,6 +10,13 @@
 #define WRITE_ERROR "Error: Can't write to %s\n"
 #define CLOSE_ERROR "Error: Can't close fd %d\n"
 
+/**
+ * main - copies the content of a file to another file
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 on success, exit with code on failure
+ */
+
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
