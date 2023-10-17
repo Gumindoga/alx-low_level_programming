@@ -23,3 +23,8 @@ int divide(int a, int b)
 	else
 		return 0;
 }
+
+int mod(int a, int b)
+{
+	return a % b;
+}
