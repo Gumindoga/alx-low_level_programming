@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	(void)argc;
 
 	for (length = 0; argv[1][length]; length++)
-			;
+		;
 
 	keygen[0] = ((char *)alph)[(length ^ 59) & 63];
 
